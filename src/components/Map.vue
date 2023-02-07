@@ -1,6 +1,11 @@
 <template>
   <div class="map">
-    <!-- <Search :list="list" @hover="handleHover" @mouseOut="handleMouseout" @clickItem="handleClick"/> -->
+    <Search
+      :list="list"
+      @hover="handleHover"
+      @mouseOut="handleMouseout"
+      @clickItem="handleClick"
+    />
     <div id="container"></div>
   </div>
 </template>
@@ -18,117 +23,149 @@ export default {
   data() {
     return {
       map: null,
+      // list: [
+      //   {
+      //     title: "协和医院",
+      //   },
+      //   {
+      //     title: "同仁医院",
+      //   },
+      //   {
+      //     title: "宣武医院",
+      //   },
+      //   {
+      //     title: "北京友谊医院",
+      //   },
+      //   {
+      //     title: "北京大学第一医院",
+      //   },
+      //   {
+      //     title: "北京大学人民医院",
+      //   },
+      //   {
+      //     title: "北京大学第三医院",
+      //   },
+      //   {
+      //     title: "北京积水潭医院",
+      //   },
+      //   {
+      //     title: "广安门医院",
+      //   },
+      //   {
+      //     title: "北京朝阳医院",
+      //   },
+      //   {
+      //     title: "中日友好医院",
+      //   },
+      //   {
+      //     title: "北京大学首钢医院",
+      //   },
+      //   {
+      //     title: "首都医科大学附属北京中医医院",
+      //   },
+      //   {
+      //     title: "首都医科大学附属北京天坛医院",
+      //   },
+      //   {
+      //     title: "北京世纪坛医院（北京铁路总医院）",
+      //   },
+      //   {
+      //     title: "北京市健宫医院",
+      //   },
+      //   {
+      //     title: "北京市房山区良乡医院",
+      //   },
+      //   {
+      //     title: "北京医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "首都医科大学附属北京安贞医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "首都医科大学附属北京潞河医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "国家电网公司北京电力医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "中国医科大学航空总医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市海淀医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市垂杨柳医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市昌平区医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市顺义区医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市平谷区医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市密云区医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市延庆区医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京怀柔医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市大兴区人民医院",
+      //     type: "new",
+      //   },
+      //   {
+      //     title: "北京市石景山医院",
+      //     type: "new",
+      //   },
+      // ],
       list: [
         {
-          title: "协和医院",
+          title: "北土城西路7号",
         },
         {
-          title: "同仁医院",
+          title: "建国路99号",
         },
         {
-          title: "宣武医院",
+          title: "望京街10号",
         },
         {
-          title: "北京友谊医院",
+          title: "呼家楼南里1号",
         },
         {
-          title: "北京大学第一医院",
+          title: "西大望路15号",
         },
         {
-          title: "北京大学人民医院",
+          title: "酒仙桥路12号",
         },
         {
-          title: "北京大学第三医院",
+          title: "太阳宫半岛公寓12号楼",
         },
         {
-          title: "北京积水潭医院",
+          title: "工体北路8号",
         },
         {
-          title: "广安门医院",
+          title: "八里庄西里99号",
         },
         {
-          title: "北京朝阳医院",
-        },
-        {
-          title: "中日友好医院",
-        },
-        {
-          title: "北京大学首钢医院",
-        },
-        {
-          title: "首都医科大学附属北京中医医院",
-        },
-        {
-          title: "首都医科大学附属北京天坛医院",
-        },
-        {
-          title: "北京世纪坛医院（北京铁路总医院）",
-        },
-        {
-          title: "北京市健宫医院",
-        },
-        {
-          title: "北京市房山区良乡医院",
-        },
-        {
-          title: "北京医院",
-          type: "new",
-        },
-        {
-          title: "首都医科大学附属北京安贞医院",
-          type: "new",
-        },
-        {
-          title: "首都医科大学附属北京潞河医院",
-          type: "new",
-        },
-        {
-          title: "国家电网公司北京电力医院",
-          type: "new",
-        },
-        {
-          title: "中国医科大学航空总医院",
-          type: "new",
-        },
-        {
-          title: "北京市海淀医院",
-          type: "new",
-        },
-        {
-          title: "北京市垂杨柳医院",
-          type: "new",
-        },
-        {
-          title: "北京市昌平区医院",
-          type: "new",
-        },
-        {
-          title: "北京市顺义区医院",
-          type: "new",
-        },
-        {
-          title: "北京市平谷区医院",
-          type: "new",
-        },
-        {
-          title: "北京市密云区医院",
-          type: "new",
-        },
-        {
-          title: "北京市延庆区医院",
-          type: "new",
-        },
-        {
-          title: "北京怀柔医院",
-          type: "new",
-        },
-        {
-          title: "北京市大兴区人民医院",
-          type: "new",
-        },
-        {
-          title: "北京市石景山医院",
-          type: "new",
+          title: "建国门外大街24号",
         },
       ],
     };
@@ -207,11 +244,11 @@ export default {
           await this.formdata(AMap);
 
           // 将点添加到地图
-          // this.map.add(this.markers);
+          this.map.add(this.markers);
           // 创建样式对象
           var styleObject = {
             // url: "//vdata.amap.com/icons/b18/1/2.png", // 图标地址
-            url: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png',
+            url: "https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png",
             size: new AMap.Size(19, 31), // 图标大小
             anchor: new AMap.Pixel(5, 5), // 图标显示位置偏移量，基准点为图标左上角
           };
@@ -254,61 +291,64 @@ export default {
       });
     },
     async formdata(AMap) {
-      // var lnglats = [];
-      // for (i = 0; i < this.list.length / 10; i++) {
-      //   var part = await this.geoCode(
-      //     this.list.slice(i * 10, (i + 1) * 10).map((item) => item.title)
-      //   );
-      //   lnglats.push(...part);
-      //   console.log(i, this.list.slice(i * 10, (i + 1) * 10));
-      // }
-      // this.markers = [];
+      var lnglats = [];
+      // 每10个解析一次
+      for (i = 0; i < this.list.length / 10; i++) {
+        const list = this.list
+          .slice(i * 10, (i + 1) * 10)
+          .map((item) => item.title);
+        console.log("list", list);
+        var part = await this.geoCode(list);
+        lnglats.push(...part);
+        console.log(i, this.list.slice(i * 10, (i + 1) * 10));
+      }
+      this.markers = [];
 
-      // for (var i = 0; i < lnglats.length; i++) {
-      //   var lnglat = lnglats[i];
-      //   // 创建点实例
-      //   var marker = new AMap.Marker({
-      //     position: new AMap.LngLat(lnglat[0], lnglat[1]),
-      //     // icon:
-      //     //   "https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png",
-      //     extData: {
-      //       id: i + 1,
-      //     },
-      //   });
+      for (var i = 0; i < lnglats.length; i++) {
+        var lnglat = lnglats[i];
+        // 创建点实例
+        var marker = new AMap.Marker({
+          position: new AMap.LngLat(lnglat[0], lnglat[1]),
+          // icon:
+          //   "https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png",
+          extData: {
+            id: i + 1,
+          },
+        });
 
-      //   this.markers.push(marker);
-      // }
+        this.markers.push(marker);
+      }
 
       // 获取pois
-      let { data: res } = await axios.get(
-        "http://127.0.0.1:7001/api/v0/pois?source=0&limit=2000"
-      );
-      this.markers = res.data
-        .filter((item) => {
-          return (
-            item.location &&
-            item.location[0] &&
-            117 < item.location[0] < 118 &&
-            item.location[1] < 42 &&
-            item.location[1] > 39
-          );
-        })
-        .map((item, i) => {
-          return {
-            lnglat: [item.location[0], item.location[1]], //点标记位置
-            name: item.name,
-            id: i,
-          };
-          // return new AMap.Marker({
-          //   position: new AMap.LngLat(item.location[0], item.location[1]),
-          //   // icon:
-          //   //   "https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png",
-          //   extData: {
-          //     id: i + 1,
-          //   },
-          // });
-        });
-      console.log(this.markers, res.data);
+      // let { data: res } = await axios.get(
+      //   "http://dreamlist.cn:7001/api/v0/pois?source=0&limit=2000"
+      // );
+      // this.markers = res.data
+      //   .filter((item) => {
+      //     return (
+      //       item.location &&
+      //       item.location[0] &&
+      //       117 < item.location[0] < 118 &&
+      //       item.location[1] < 42 &&
+      //       item.location[1] > 39
+      //     );
+      //   })
+      //   .map((item, i) => {
+      //     return {
+      //       lnglat: [item.location[0], item.location[1]], //点标记位置
+      //       name: item.name,
+      //       id: i,
+      //     };
+      //     // return new AMap.Marker({
+      //     //   position: new AMap.LngLat(item.location[0], item.location[1]),
+      //     //   // icon:
+      //     //   //   "https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png",
+      //     //   extData: {
+      //     //     id: i + 1,
+      //     //   },
+      //     // });
+      //   });
+      // console.log(this.markers, res.data);
     },
   },
 };
