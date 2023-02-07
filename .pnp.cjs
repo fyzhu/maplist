@@ -35,11 +35,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@amap/amap-jsapi-loader", "npm:1.0.1"],
             ["@vitejs/plugin-vue", "virtual:ba8232287dcb37f22c8b868d6a255d79eb99074fbd690b2eca06226886b3674723bc99fc35d01c373e707a8351c2835c0934a62190b4950306145bbb5e0813c5#npm:1.9.3"],
+            ["axios", "npm:0.22.0"],
             ["vite", "virtual:ba8232287dcb37f22c8b868d6a255d79eb99074fbd690b2eca06226886b3674723bc99fc35d01c373e707a8351c2835c0934a62190b4950306145bbb5e0813c5#npm:2.6.3"],
             ["vue", "npm:3.2.19"]
           ],
           "linkType": "SOFT",
+        }]
+      ]],
+      ["@amap/amap-jsapi-loader", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/@amap-amap-jsapi-loader-npm-1.0.1-eb8a4ff75d-9fedc17818.zip/node_modules/@amap/amap-jsapi-loader/",
+          "packageDependencies": [
+            ["@amap/amap-jsapi-loader", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@babel/helper-validator-identifier", [
@@ -342,6 +353,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["are-we-there-yet", "npm:1.1.7"],
             ["delegates", "npm:1.0.0"],
             ["readable-stream", "npm:2.3.7"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["axios", [
+        ["npm:0.22.0", {
+          "packageLocation": "./.yarn/cache/axios-npm-0.22.0-ed558f7b05-83dc4d02e1.zip/node_modules/axios/",
+          "packageDependencies": [
+            ["axios", "npm:0.22.0"],
+            ["follow-redirects", "virtual:ed558f7b05c3a636c1ad2d97f901dd0c42b922ef0ba05d49aa3260595e3d01913b69c7d48043293c92c362499c1263e2fbc09546eb72d357a16e9997e9137304#npm:1.14.4"]
           ],
           "linkType": "HARD",
         }]
@@ -701,6 +722,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["follow-redirects", [
+        ["npm:1.14.4", {
+          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.14.4-19eb02e590-d4ce74cf5c.zip/node_modules/follow-redirects/",
+          "packageDependencies": [
+            ["follow-redirects", "npm:1.14.4"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:ed558f7b05c3a636c1ad2d97f901dd0c42b922ef0ba05d49aa3260595e3d01913b69c7d48043293c92c362499c1263e2fbc09546eb72d357a16e9997e9137304#npm:1.14.4", {
+          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-048cb2cc81/0/cache/follow-redirects-npm-1.14.4-19eb02e590-d4ce74cf5c.zip/node_modules/follow-redirects/",
+          "packageDependencies": [
+            ["follow-redirects", "virtual:ed558f7b05c3a636c1ad2d97f901dd0c42b922ef0ba05d49aa3260595e3d01913b69c7d48043293c92c362499c1263e2fbc09546eb72d357a16e9997e9137304#npm:1.14.4"],
+            ["debug", null]
+          ],
+          "packagePeers": [
+            "debug"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["fs-minipass", [
         ["npm:2.1.0", {
           "packageLocation": "./.yarn/cache/fs-minipass-npm-2.1.0-501ef87306-1b8d128dae.zip/node_modules/fs-minipass/",
@@ -1010,7 +1051,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["map.jinga.vip", "workspace:."],
+            ["@amap/amap-jsapi-loader", "npm:1.0.1"],
             ["@vitejs/plugin-vue", "virtual:ba8232287dcb37f22c8b868d6a255d79eb99074fbd690b2eca06226886b3674723bc99fc35d01c373e707a8351c2835c0934a62190b4950306145bbb5e0813c5#npm:1.9.3"],
+            ["axios", "npm:0.22.0"],
             ["vite", "virtual:ba8232287dcb37f22c8b868d6a255d79eb99074fbd690b2eca06226886b3674723bc99fc35d01c373e707a8351c2835c0934a62190b4950306145bbb5e0813c5#npm:2.6.3"],
             ["vue", "npm:3.2.19"]
           ],

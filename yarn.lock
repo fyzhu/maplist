@@ -5,6 +5,13 @@ __metadata:
   version: 4
   cacheKey: 8
 
+"@amap/amap-jsapi-loader@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@amap/amap-jsapi-loader@npm:1.0.1"
+  checksum: 9fedc17818b5ab07527340a2e6a50546069a3ec27589a0a504b3c524dc33c26757a34486e65fc3d2a926537b2699912ff9f6e0c336685bb8f7e599995c1002f8
+  languageName: node
+  linkType: hard
+
 "@babel/helper-validator-identifier@npm:^7.14.9":
   version: 7.15.7
   resolution: "@babel/helper-validator-identifier@npm:7.15.7"
@@ -251,6 +258,15 @@ __metadata:
     delegates: ^1.0.0
     readable-stream: ^2.0.6
   checksum: 70d251719c969b2745bfe5ddf3ebaefa846a636e90a6d5212573676af5d6670e15457761d4725731e19cbebdce42c4ab0cbedf23ab047f2a08274985aa10a3c7
+  languageName: node
+  linkType: hard
+
+"axios@npm:^0.22.0":
+  version: 0.22.0
+  resolution: "axios@npm:0.22.0"
+  dependencies:
+    follow-redirects: ^1.14.4
+  checksum: 83dc4d02e180f69aa9f0d1d0d50b84ec3603517230d58b4c3720ebd440c7e64ea86c5e892dc6e19061608e8e1103504a709d8baa4051c4b7652101b523d04b63
   languageName: node
   linkType: hard
 
@@ -573,6 +589,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.14.4":
+  version: 1.14.4
+  resolution: "follow-redirects@npm:1.14.4"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: d4ce74cf5c6f363168b97e706b914eb9ffb6bf4d4c6d8f8330b93088d9b90e566611ddbcf0e42c8ed5fd17598dfeda1d19230d3e9d6d6c6b4d1c10ec3a0b99be
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -849,7 +875,9 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "map.jinga.vip@workspace:."
   dependencies:
+    "@amap/amap-jsapi-loader": ^1.0.1
     "@vitejs/plugin-vue": ^1.9.2
+    axios: ^0.22.0
     vite: ^2.6.0
     vue: ^3.2.16
   languageName: unknown
