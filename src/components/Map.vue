@@ -14,6 +14,9 @@
 import AMapLoader from "@amap/amap-jsapi-loader";
 import axios from "axios";
 import Search from "./Search.vue";
+import city from '../city.json'
+import hospital from '../hospital.json'
+
 export default {
   name: "Map",
   props: {},
@@ -23,151 +26,42 @@ export default {
   data() {
     return {
       map: null,
+      list: city.map(item => ({
+        title: item
+      }))
+      // list: hospital
       // list: [
       //   {
-      //     title: "协和医院",
+      //     title: "北土城西路7号",
       //   },
       //   {
-      //     title: "同仁医院",
+      //     title: "建国路99号",
       //   },
       //   {
-      //     title: "宣武医院",
+      //     title: "望京街10号",
       //   },
       //   {
-      //     title: "北京友谊医院",
+      //     title: "呼家楼南里1号",
       //   },
       //   {
-      //     title: "北京大学第一医院",
+      //     title: "西大望路15号",
       //   },
       //   {
-      //     title: "北京大学人民医院",
+      //     title: "酒仙桥路12号",
       //   },
       //   {
-      //     title: "北京大学第三医院",
+      //     title: "太阳宫半岛公寓12号楼",
       //   },
       //   {
-      //     title: "北京积水潭医院",
+      //     title: "工体北路8号",
       //   },
       //   {
-      //     title: "广安门医院",
+      //     title: "八里庄西里99号",
       //   },
       //   {
-      //     title: "北京朝阳医院",
-      //   },
-      //   {
-      //     title: "中日友好医院",
-      //   },
-      //   {
-      //     title: "北京大学首钢医院",
-      //   },
-      //   {
-      //     title: "首都医科大学附属北京中医医院",
-      //   },
-      //   {
-      //     title: "首都医科大学附属北京天坛医院",
-      //   },
-      //   {
-      //     title: "北京世纪坛医院（北京铁路总医院）",
-      //   },
-      //   {
-      //     title: "北京市健宫医院",
-      //   },
-      //   {
-      //     title: "北京市房山区良乡医院",
-      //   },
-      //   {
-      //     title: "北京医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "首都医科大学附属北京安贞医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "首都医科大学附属北京潞河医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "国家电网公司北京电力医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "中国医科大学航空总医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市海淀医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市垂杨柳医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市昌平区医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市顺义区医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市平谷区医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市密云区医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市延庆区医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京怀柔医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市大兴区人民医院",
-      //     type: "new",
-      //   },
-      //   {
-      //     title: "北京市石景山医院",
-      //     type: "new",
+      //     title: "建国门外大街24号",
       //   },
       // ],
-      list: [
-        {
-          title: "北土城西路7号",
-        },
-        {
-          title: "建国路99号",
-        },
-        {
-          title: "望京街10号",
-        },
-        {
-          title: "呼家楼南里1号",
-        },
-        {
-          title: "西大望路15号",
-        },
-        {
-          title: "酒仙桥路12号",
-        },
-        {
-          title: "太阳宫半岛公寓12号楼",
-        },
-        {
-          title: "工体北路8号",
-        },
-        {
-          title: "八里庄西里99号",
-        },
-        {
-          title: "建国门外大街24号",
-        },
-      ],
     };
   },
   mounted() {
@@ -197,7 +91,7 @@ export default {
       AMapLoader.load({
         key: "308c528afc2ff841fbc0cbfe51e925d6", // 申请好的Web端开发者Key，首次调用 load 时必填
         version: "2.0", // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
-        plugins: ["AMap.Geocoder", "AMap.Geolocation", "AMap.ToolBar"], // 需要使用的的插件列表，如比例尺'AMap.Scale'等
+        plugins: ["AMap.Geocoder", "AMap.Geolocation", "AMap.ToolBar", "AMap.DistrictSearch"], // 需要使用的的插件列表，如比例尺'AMap.Scale'等
         AMapUI: {
           // 是否加载 AMapUI，缺省不加载
           version: "1.1", // AMapUI 缺省 1.1
@@ -238,7 +132,7 @@ export default {
             }
           });
           this.geocoder = new AMap.Geocoder({
-            city: "010", //城市设为北京，默认：“全国”
+            // city: "010", //城市设为北京，默认：“全国”
           });
 
           await this.formdata(AMap);
@@ -273,11 +167,12 @@ export default {
       return new Promise((resolve, reject) => {
         this.geocoder.getLocation(address, function (status, result) {
           if (status === "complete" && result.geocodes.length) {
+            console.log(result.geocodes);
             resolve(
               result.geocodes.map((item) => [
-                item.location.lng,
-                item.location.lat,
-              ])
+                item?.location.lng,
+                item?.location.lat,
+              ]).filter(item => item[0])
             );
 
             // document.getElementById('lnglat').value = lnglat;
@@ -300,7 +195,7 @@ export default {
         console.log("list", list);
         var part = await this.geoCode(list);
         lnglats.push(...part);
-        console.log(i, this.list.slice(i * 10, (i + 1) * 10));
+        // console.log(i, this.list.slice(i * 10, (i + 1) * 10));
       }
       this.markers = [];
 
